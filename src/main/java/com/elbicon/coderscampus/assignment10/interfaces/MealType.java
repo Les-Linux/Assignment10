@@ -10,7 +10,7 @@ public interface MealType {
     Integer getMaxCalories();
     String getExcludeIngredients();
 
-    private void setDiet(String diet) { }
-    private void setMaxCalories(Integer maxCalories) {}
-    private void setExcludeIngredients(String excludeIngredients) {}
+    void setDiet(String diet);
+    void setMaxCalories(Integer maxCalories);
+    void setExcludeIngredients(String excludeIngredients);
 }
