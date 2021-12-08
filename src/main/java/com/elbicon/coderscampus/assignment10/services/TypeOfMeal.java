@@ -11,9 +11,9 @@ public class TypeOfMeal {
      */
     private MealType mealPlan = new MealTypeImpl();
 
-        /*
-        set the meal values on the dto class
-     */
+    /*
+    set the meal values on the dto class
+ */
     public MealType getMealPlan(String calories, String diet, String exclusions) {
         with(mealPlan, meal -> {
             meal.setMaxCalories(Integer.valueOf(calories));

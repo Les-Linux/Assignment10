@@ -1,8 +1,6 @@
 package com.elbicon.coderscampus.assignment10.web;
 
 
-import com.elbicon.coderscampus.assignment10.dto.DailyMealPlan;
-import com.elbicon.coderscampus.assignment10.dto.WeeklyMealPlan;
 import com.elbicon.coderscampus.assignment10.enums.Planner;
 import com.elbicon.coderscampus.assignment10.interfaces.Meals;
 import com.elbicon.coderscampus.assignment10.services.TypeOfMeal;
@@ -16,7 +14,7 @@ import com.elbicon.coderscampus.assignment10.services.MealFactoryService;
 
 
 @RestController
-public class MealPlannerController implements Meals{
+public class MealPlannerController implements Meals {
 
     @Value("${api.key}")
     String key;
@@ -30,8 +28,8 @@ public class MealPlannerController implements Meals{
     @Override
     @GetMapping("/mealplanner/week")
     public ResponseEntity<?> getWeekMeals(@RequestParam String numCalories,
-                                                      @RequestParam String diet,
-                                                      @RequestParam String exclusions) {
+                                          @RequestParam String diet,
+                                          @RequestParam String exclusions) {
         /*
             a meal dto to be passed on to member
             classes to obtain meal details
@@ -42,19 +40,21 @@ public class MealPlannerController implements Meals{
         /*
             get a list of weekly meals based on input parameters
          */
-        ResponseEntity<?> weeklyMealPlan = mealFactoryService.getMeal(
-                typeOfMeal.getMealPlan(numCalories,diet,exclusions),
-                Planner.WEEK.getProperty());
-
-        return weeklyMealPlan;
-
+        try {
+            return mealFactoryService.getMeal(
+                    typeOfMeal.getMealPlan(numCalories, diet, exclusions),
+                    Planner.WEEK.getProperty());
+        }catch(Exception e){
+            System.out.println("Exception Caught - [Class]:MealPlannerController [Message]:" + e.getMessage());
+        }
+        return null;
     }
 
     @Override
     @GetMapping("mealplanner/day")
     public ResponseEntity<?> getDayMeals(@RequestParam String numCalories,
-                                                     @RequestParam String diet,
-                                                     @RequestParam String exclusions) {
+                                         @RequestParam String diet,
+                                         @RequestParam String exclusions) {
 
         /*
             a meal dto to be passed on to member
@@ -67,10 +67,13 @@ public class MealPlannerController implements Meals{
         /*
             get a list of daily meals based on input parameters
          */
-        ResponseEntity<?> dailyMealPlan = mealFactoryService.getMeal(
-                typeOfMeal.getMealPlan(numCalories,diet,exclusions),
-                                         Planner.DAY.getProperty());
-
-        return dailyMealPlan;
+        try {
+            return mealFactoryService.getMeal(
+                    typeOfMeal.getMealPlan(numCalories, diet, exclusions),
+                    Planner.DAY.getProperty());
+        }catch(Exception e){
+            System.out.println("Exception Caught - [Class]:MealPlannerController [Message]:" + e.getMessage());
+        }
+    return null;
     }
 }

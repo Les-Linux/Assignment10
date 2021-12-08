@@ -1,15 +1,10 @@
 package com.elbicon.coderscampus.assignment10.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.ArrayList;
 import java.util.List;
 
-public class DailyMealPlan {
-    @JsonProperty("meals")
-    private List<Meal> meals = new ArrayList<>();
-    @JsonProperty("nutrients")
-    private Nutrients nutrients = new Nutrients();
+public class Sunday {
+    public List<Meal> meals;
+    public Nutrients nutrients;
 
     public List<Meal> getMeals() {
         return meals;

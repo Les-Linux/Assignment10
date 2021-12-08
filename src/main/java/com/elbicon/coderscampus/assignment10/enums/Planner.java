@@ -6,10 +6,11 @@ public enum Planner {
 
     private final String property;
 
-    private Planner(final String property){
+    Planner(final String property) {
         this.property = property;
     }
-    public String getProperty(){
+
+    public String getProperty() {
         return property;
     }
 }

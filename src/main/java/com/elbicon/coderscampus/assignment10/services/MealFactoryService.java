@@ -12,14 +12,14 @@ public class MealFactoryService {
     @Autowired
     MealService mealService;
 
-    public ResponseEntity<?> getMeal(MealType mealType, String timeFrame){
+    public ResponseEntity<?> getMeal(MealType mealType, String timeFrame) {
         /*
             return meal options based on timeFrame
             e.g. meals for a day or meals for a week
          */
-        if(timeFrame.equals(Planner.DAY.getProperty())) {
+        if (timeFrame.equals(Planner.DAY.getProperty())) {
             return mealService.getMeal(mealType, timeFrame);
-        }else{
+        } else {
             return mealService.getMeal(mealType, Planner.WEEK.getProperty());
         }
     }

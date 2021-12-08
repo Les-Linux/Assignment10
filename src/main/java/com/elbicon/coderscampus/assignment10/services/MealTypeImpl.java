@@ -12,7 +12,8 @@ public class MealTypeImpl implements MealType {
     public String getDiet() {
         return diet;
     }
-    public void setDiet(String diet){
+
+    public void setDiet(String diet) {
         this.diet = diet;
     }
 
@@ -21,7 +22,7 @@ public class MealTypeImpl implements MealType {
         return maxCalories;
     }
 
-    public void setMaxCalories(Integer maxCalories){
+    public void setMaxCalories(Integer maxCalories) {
         this.maxCalories = maxCalories;
     }
 
@@ -30,7 +31,7 @@ public class MealTypeImpl implements MealType {
         return excludeIngredients;
     }
 
-    public void setExcludeIngredients(String excludeIngredients){
+    public void setExcludeIngredients(String excludeIngredients) {
         this.excludeIngredients = excludeIngredients;
     }
 }

@@ -12,7 +12,8 @@ public class Nutrients {
     public String getCalories() {
         return calories;
     }
-    @JsonProperty(value="calories")
+
+    @JsonProperty(value = "calories")
     public void setCalories(String calories) {
         this.calories = calories;
     }
@@ -20,7 +21,8 @@ public class Nutrients {
     public String getProtein() {
         return protein;
     }
-    @JsonProperty(value="protein")
+
+    @JsonProperty(value = "protein")
     public void setProtein(String protein) {
         this.protein = protein;
     }
@@ -28,7 +30,8 @@ public class Nutrients {
     public String getFat() {
         return fat;
     }
-    @JsonProperty(value="fat")
+
+    @JsonProperty(value = "fat")
     public void setFat(String fat) {
         this.fat = fat;
     }
@@ -36,7 +39,8 @@ public class Nutrients {
     public String getCarbohydrates() {
         return carbohydrates;
     }
-    @JsonProperty(value="carbohydrates")
+
+    @JsonProperty(value = "carbohydrates")
     public void setCarbohydrates(String carbohydrates) {
         this.carbohydrates = carbohydrates;
     }
