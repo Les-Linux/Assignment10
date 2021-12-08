@@ -1,6 +1,5 @@
 package com.elbicon.coderscampus.assignment10.services;
 
-import com.elbicon.coderscampus.assignment10.dto.DailyMealPlan;
 import com.elbicon.coderscampus.assignment10.enums.Planner;
 import com.elbicon.coderscampus.assignment10.interfaces.MealType;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,8 +2,6 @@ package com.elbicon.coderscampus.assignment10.interfaces;
 
 import org.springframework.stereotype.Component;
 
-import java.util.Optional;
-
 @Component
 public interface MealType {
     String getDiet();

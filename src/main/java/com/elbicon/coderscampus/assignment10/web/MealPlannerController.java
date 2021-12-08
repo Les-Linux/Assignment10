@@ -1,6 +1,7 @@
 package com.elbicon.coderscampus.assignment10.web;
 
 
+import com.elbicon.coderscampus.assignment10.dto.DailyMealPlan;
 import com.elbicon.coderscampus.assignment10.enums.Planner;
 import com.elbicon.coderscampus.assignment10.interfaces.Meals;
 import com.elbicon.coderscampus.assignment10.services.TypeOfMeal;
@@ -14,7 +15,7 @@ import com.elbicon.coderscampus.assignment10.services.MealFactoryService;
 
 
 @RestController
-public class MealPlannerController implements Meals {
+public class MealPlannerController implements Meals <ResponseEntity<?>> {
 
     @Value("${api.key}")
     String key;
@@ -28,8 +29,8 @@ public class MealPlannerController implements Meals {
     @Override
     @GetMapping("/mealplanner/week")
     public ResponseEntity<?> getWeekMeals(@RequestParam String numCalories,
-                                          @RequestParam String diet,
-                                          @RequestParam String exclusions) {
+                                       @RequestParam String diet,
+                                       @RequestParam String exclusions) {
         /*
             a meal dto to be passed on to member
             classes to obtain meal details
@@ -53,8 +54,8 @@ public class MealPlannerController implements Meals {
     @Override
     @GetMapping("mealplanner/day")
     public ResponseEntity<?> getDayMeals(@RequestParam String numCalories,
-                                         @RequestParam String diet,
-                                         @RequestParam String exclusions) {
+                                                     @RequestParam String diet,
+                                                     @RequestParam String exclusions) {
 
         /*
             a meal dto to be passed on to member

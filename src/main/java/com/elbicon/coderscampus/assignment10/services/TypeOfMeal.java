@@ -9,7 +9,7 @@ public class TypeOfMeal {
         mealType - a choice of meals for a day
                    a choice of meals for a week
      */
-    private MealType mealPlan = new MealTypeImpl();
+    private final MealType mealPlan = new MealTypeImpl();
 
     /*
     set the meal values on the dto class
